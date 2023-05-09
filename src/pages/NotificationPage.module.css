@@ -4,7 +4,5 @@
     font-weight: 600;
   }
   .newNotification {
-    display: flex;
-    justify-content:space-evenly;
     margin-top: 2.5rem;
   }

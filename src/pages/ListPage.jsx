@@ -27,7 +27,7 @@ const ListPage = ({ setRequests }) => {
     const { data, error } = await supabase
       .from("animals")
       .select()
-      .order("id", { ascending: false });
+      .order("id", { ascending: true});
     if (error) {
       addError("Neuspješno dohvaćanje podataka");
     }

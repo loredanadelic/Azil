@@ -2,7 +2,8 @@
 textarea{
     display:block;
     width:15rem;
-    margin-bottom:0.5rem;
+
+    margin: auto;
 }
 .form input{
     height:1.5rem;
@@ -16,11 +17,10 @@ textarea{
 }
 .buttons{
     display:flex;
-    justify-content: space-between;
-
+   justify-content: center;
 }
 .buttons button{
-    margin:0 1.5rem;
+    margin:1rem 1.5rem;
     width:5rem;
     height:1.8rem;
     background-color:#8AD88F;
