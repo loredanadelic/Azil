@@ -1,0 +1,31 @@
+.container {
+  border-radius: 2rem;
+  height: 16rem;
+  margin: 0.5rem;
+
+}
+.animal {
+  display: flex;
+  align-items: center;
+}
+.image {
+  margin-left:0.1rem;
+  width: 30%;
+}
+.text {
+  width: 70%;
+}
+
+.image img {
+  width: 100%;
+}
+.buttons button {
+  margin: 0.5rem 0.5rem;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  font-size: medium;
+  font-weight: 500;
+  position: relative;
+  bottom:0rem;
+}

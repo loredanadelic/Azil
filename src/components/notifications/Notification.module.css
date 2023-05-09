@@ -1,0 +1,36 @@
+.notification{
+    display:flex;
+    justify-content: space-between;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: grey;
+    margin-top:1rem;
+    padding: 0.1rem 1rem;
+}
+
+.wrapper{
+    width:90%;
+    margin:auto;
+}
+
+.message{
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: grey;
+    padding: 0.1rem 1rem;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:end;
+}
+.message p{
+    width:100%;
+}
+
+.img {
+    width:2rem;
+    
+}
+
+.img img{
+    width:100%;
+}

@@ -1,0 +1,97 @@
+.add {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  column-gap: 2rem;
+}
+
+.add button {
+  grid-column: 1 / span 2;
+  width: 20%;
+  margin: auto;
+  margin-top: 1rem;
+  height: 2.5rem;
+  border-radius: 0.8rem;
+  font-size: large;
+}
+
+.firstDiv {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin: auto;
+
+}
+.add select{
+    width:100%;
+}
+.add input,
+select {
+  height: 1.8rem;
+  border-radius: 0.7rem;
+  text-align: center;
+}
+.add input[type="checkbox"] {
+  width: 1rem;
+  margin-right: 1rem;
+}
+
+.add label {
+  text-align: left;
+  margin: 1rem 0 0.7rem 0.2rem;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.secondDiv {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.add .edit button:hover {
+  cursor: pointer;
+}
+
+.add input {
+  display: block;
+}
+
+.edit {
+    display: grid;
+    grid-template-columns: 1fr;
+
+
+}
+
+.edit input,
+option,
+label
+ {
+    display:block;
+    width:80%;
+    margin: 0 auto;
+    text-align: center;
+    height:1.2rem;
+    border-radius: 0.4rem;
+}
+.edit button{
+    width:35%;
+    height:2rem;
+    border-radius: 0.4rem;
+}
+.edit .buttons{
+   display:flex;
+   justify-content: space-evenly;
+}
+.edit select{
+    width:80%;
+    margin:auto;
+}
+
+.add button{
+    width:6rem;
+}
+

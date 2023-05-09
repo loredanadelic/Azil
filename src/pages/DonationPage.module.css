@@ -1,0 +1,15 @@
+.donations {
+    width: 85%;
+    margin: auto;
+  }
+  .donations h3 {
+    text-align: left;
+  }
+  
+  .newDonation {
+    width: 10rem;
+    font-size: large;
+    height: 2rem;
+    margin-top: 2rem;
+    border-radius: 0.6rem;
+  }

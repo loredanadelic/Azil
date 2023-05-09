@@ -1,0 +1,31 @@
+.list {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  margin-top: 2rem;
+}
+.listGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form label{
+  font-size: large;
+  font-weight: 500;
+}
+.form input{
+    height:1.5rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .listGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .listGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,12 @@
+.form input,
+textarea{
+    width:15rem;
+}
+
+.form input{
+    height:1.7rem;
+}
+
+.form textarea{
+    height:4rem;
+}

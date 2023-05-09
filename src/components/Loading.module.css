@@ -1,0 +1,17 @@
+@keyframes InfiniteLoop {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.imageLoader {
+  margin-top: 50rem;
+  padding-top: 10px;
+  animation: InfiniteLoop 3s linear infinite;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}

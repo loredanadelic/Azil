@@ -1,0 +1,12 @@
+.map-container {
+    width: 40%;
+    height: 50vh;
+  }
+  
+  .homepage {
+    margin-top: 4rem;
+  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }

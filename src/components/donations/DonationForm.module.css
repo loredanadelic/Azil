@@ -1,0 +1,23 @@
+
+.modal input,
+option,
+label {
+  display: block;
+  width: 12rem;
+  margin: 0.5rem auto;
+  text-align: center;
+  height: 1.3rem;
+  border-radius: 0.5rem;
+}
+
+.buttons{
+width:60%;
+margin:0.5rem auto;
+display:flex;
+justify-content: space-between;
+}
+.buttons button{
+    width: 45%;
+    height:1.5rem;
+    font-size: medium;
+}

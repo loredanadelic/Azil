@@ -1,0 +1,28 @@
+.form input,
+textarea{
+    display:block;
+    width:15rem;
+    margin-bottom:0.5rem;
+}
+.form input{
+    height:1.5rem;
+}
+.form textarea{
+  height:3rem;
+}
+
+.form label{
+    font-size: large;
+}
+.buttons{
+    display:flex;
+    justify-content: space-between;
+
+}
+.buttons button{
+    margin:0 1.5rem;
+    width:5rem;
+    height:1.8rem;
+    background-color:#8AD88F;
+    font-size: medium;
+}
