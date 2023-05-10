@@ -20,9 +20,13 @@ const Animal = ({ animal, setAnimals, setRequests }) => {
     image,
     requested,
   } = animal;
-  const [adopt, setAdopt]=useState(false);
+  const [adopt, setAdopt] = useState(false);
   const { addError } = useAPIError();
-  const status = adopted ? "Udomljen" : "Nije udomljen";
+  const status = adopted
+    ? "Udomljen"
+    : requested
+    ? "Zatraženo udomljavanje"
+    : "Nije udomljen";
   const admin = useContext(AdminContext);
   const [edit, setEdit] = useState(false);
   const [editAnimal, setEditAnimal] = useState(animalData);
@@ -80,7 +84,7 @@ const Animal = ({ animal, setAnimals, setRequests }) => {
       years,
       image,
     });
-  }, [id]);
+  }, [id, adopted]);
   const handleAdopt = async () => {
     const { error } = await supabase
       .from("requests")
@@ -98,7 +102,7 @@ const Animal = ({ animal, setAnimals, setRequests }) => {
     if (response.data) {
       setRequests(response.data);
     }
-    setAdopt(true)
+    setAdopt(true);
   };
   if (edit && admin) {
     return (
@@ -128,12 +132,19 @@ const Animal = ({ animal, setAnimals, setRequests }) => {
       </div>
       <p>Opis: {description}</p>
       <div className={styles.buttons}>
-        {!adopted && !requested && !admin && <button onClick={handleAdopt}>Udomi</button>}
+        {!adopted && !requested && !admin && (
+          <button onClick={handleAdopt}>Udomi</button>
+        )}
         {admin && (
           <button onClick={() => setEdit((prev) => !prev)}>Uredi</button>
         )}
       </div>
-      {adopt && <Modal><p>Poslan zahtjev za udomljavanjem.</p><button onClick={()=>setAdopt(false)}>U redu</button></Modal>}
+      {adopt && (
+        <Modal>
+          <p>Poslan zahtjev za udomljavanjem.</p>
+          <button onClick={() => setAdopt(false)}>U redu</button>
+        </Modal>
+      )}
     </div>
   );
 };
