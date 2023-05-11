@@ -1,9 +1,19 @@
 import styles from "./Form.module.css";
-const Form = ({ handleChange, action, animal, handleForm, setEdit }) => {
+const Form = ({
+  handleChange,
+  action,
+  animal,
+  handleForm,
+  setEdit,
+  setAnimal,
+  animalOld,
+}) => {
   return (
     <form className={styles[action]} onSubmit={handleForm}>
       <div className={styles.firstDiv}>
-        <label htmlFor="name">Ime: </label>
+        <label htmlFor="name">
+          Ime: <span style={{ color: "red" }}>*</span>
+        </label>
         <input
           id="name"
           name="name"
@@ -14,7 +24,9 @@ const Form = ({ handleChange, action, animal, handleForm, setEdit }) => {
             handleChange(e, "name");
           }}
         />
-        <label htmlFor="animalType">Vrsta:</label>
+        <label htmlFor="animalType">
+          Vrsta: <span style={{ color: "red" }}>*</span>
+        </label>
         <select
           id="animalType"
           name="animalType"
@@ -30,7 +42,9 @@ const Form = ({ handleChange, action, animal, handleForm, setEdit }) => {
           <option value="zec">Zec</option>
           <option value="ostalo">Ostalo</option>
         </select>
-        <label htmlFor="animalYears">Godine:</label>
+        <label htmlFor="animalYears">
+          Godine: <span style={{ color: "red" }}>*</span>
+        </label>
         <input
           type="number"
           id="animalYears"
@@ -68,7 +82,9 @@ const Form = ({ handleChange, action, animal, handleForm, setEdit }) => {
             }}
           />
         </div>
-        <label htmlFor="examination">Pregled: </label>
+        <label htmlFor="examination">
+          Pregled: <span style={{ color: "red" }}>*</span>
+        </label>
         <input
           name="examination"
           id="examination"
@@ -110,9 +126,20 @@ const Form = ({ handleChange, action, animal, handleForm, setEdit }) => {
           Spremi
         </button>
         {action === "edit" && (
-          <button type="button" onClick={() => setEdit(false)}>
+          <button
+            type="button"
+            onClick={() => {
+              setEdit(false);
+              setAnimal(animalOld);
+            }}
+          >
             Odustani
           </button>
+        )}
+        {action !== "edit" && (
+          <p>
+            <span style={{ color: "red" }}>*</span> obavezna polja
+          </p>
         )}
       </div>
     </form>

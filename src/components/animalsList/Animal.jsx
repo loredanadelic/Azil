@@ -40,7 +40,7 @@ const Animal = ({ animal, setAnimals, setRequests }) => {
   };
   const handleEdit = async (e) => {
     e.preventDefault();
-    if (validateAnimalInput(animal)) {
+    if (validateAnimalInput(editAnimal)) {
       const { error } = await supabase
         .from("animals")
         .update({
@@ -56,10 +56,12 @@ const Animal = ({ animal, setAnimals, setRequests }) => {
         .eq("id", id);
       if (error) {
         addError("Pogrešna izmjena podataka");
+        setEditAnimal(animal);
         return;
       }
     } else {
       addError("Neuspješna izmjena podataka");
+      setEditAnimal(animal);
     }
     const { data, error } = await supabase
       .from("animals")
@@ -112,6 +114,8 @@ const Animal = ({ animal, setAnimals, setRequests }) => {
         animal={editAnimal}
         handleForm={handleEdit}
         setEdit={setEdit}
+        setAnimal={setEditAnimal}
+        animalOld={animal}
       />
     );
   }
