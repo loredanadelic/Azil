@@ -26,9 +26,11 @@ const NotificationForm = ({ fetchNotifications, setAddNotification }) => {
       ...notification,
       date: new Date().toLocaleDateString(),
     };
-    const {error}=await supabase.from("notifications").insert([newNotification]);
-    if(error){
-      addError('Pogreška kod dodavanja obavijesti')
+    const { error } = await supabase
+      .from("notifications")
+      .insert([newNotification]);
+    if (error) {
+      addError("Pogreška kod dodavanja obavijesti");
     }
     await fetchNotifications();
     setAddNotification(false);
@@ -42,14 +44,17 @@ const NotificationForm = ({ fetchNotifications, setAddNotification }) => {
           onChange={(e) => {
             handleChange(e, "title");
           }}
-           maxLength="20"
+          maxLength="20"
+          required
         />
         <label>Tekst: </label>
         <textarea
           onChange={(e) => {
             handleChange(e, "message");
           }}
-          minLength="10" maxLength="200"
+          minLength="10"
+          maxLength="200"
+          required
         />
         {admin && (
           <>
@@ -64,7 +69,9 @@ const NotificationForm = ({ fetchNotifications, setAddNotification }) => {
         )}
         <div className={styles.buttons}>
           <button type="submit">Spremi</button>
-          <button type="button" onClick={()=>setAddNotification(false)}>Odustani</button>
+          <button type="button" onClick={() => setAddNotification(false)}>
+            Odustani
+          </button>
         </div>
       </form>
     </div>

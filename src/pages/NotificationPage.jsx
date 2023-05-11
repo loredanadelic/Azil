@@ -5,7 +5,6 @@ import NotificationForm from "../components/notifications/NotificationForm";
 import Loading from "../components/Loading";
 import useAPIError from "../utils/useApiError";
 import styles from './NotificationPage.module.css'
-import { StyleSheetManager } from "styled-components";
 const NotificationPage = () => {
   const [notifications, setNotifications] = useState([]);
   const [addNotification, setAddNotification] = useState(false);

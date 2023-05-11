@@ -22,15 +22,14 @@ const Animal = ({ animal, setAnimals, setRequests }) => {
   } = animal;
   const [adopt, setAdopt] = useState(false);
   const { addError } = useAPIError();
+  const [edit, setEdit] = useState(false);
+  const [editAnimal, setEditAnimal] = useState(animalData);
   const status = adopted
     ? "Udomljen"
     : requested
     ? "Zatraženo udomljavanje"
     : "Nije udomljen";
   const admin = useContext(AdminContext);
-  const [edit, setEdit] = useState(false);
-  const [editAnimal, setEditAnimal] = useState(animalData);
-
   const handleChange = (e, type) => {
     if (type === "chip" || type === "adopted") {
       setEditAnimal((prev) => ({ ...prev, [type]: e.target.checked }));

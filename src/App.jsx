@@ -27,10 +27,9 @@ function App() {
   };
   useEffect(() => {
     fetch("requests", setRequests);
-  }, []);
-  useEffect(() => {
     setLength(requests.length);
   }, [requests.length]);
+ 
   return (
     <>
       <AdminContext.Provider value={admin}>

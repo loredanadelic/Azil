@@ -7,12 +7,20 @@ export const validateAnimalInput = ({
   years,
   image,
 }) => {
-  if (name !== "" && type !== "" && examination !== "" && years !== null) {
-    if (image.match(urlPattern)) {
+  if (
+    name !== "" &&
+    type !== "" &&
+    examination !== "" &&
+    years !== null
+  ) {
+    if (image !== null && image!=='') {
+      if (image.match(urlPattern)) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
       return true;
-    }
-    else {
-        return false
     }
   } else {
     return false;
